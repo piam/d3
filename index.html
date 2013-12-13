@@ -91,9 +91,10 @@
 	  </div>
 	  
 	  <script>
+	  
 	  	d3.select("#d3selectors")
-		  .selectAll(".btn").style("background-color", var btn_clr = function() {return "hsl(" + Math.random() * 360 + ",100%,50%)";});
-		  .selectAll(".btn").style("border-color"), btn_clr
+		  .selectAll(".btn")
+		  	.style("background-color", rndm_clr=(function() {return "hsl(" + Math.random() * 360 + ",100%,50%)";}));
 	  </script>
 
     </div><!-- /.container -->
