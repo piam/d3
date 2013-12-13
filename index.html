@@ -1,76 +1,89 @@
+
 <!DOCTYPE html>
-<meta charset="utf-8">
-<style>
-
-	.margin_test div {
-		font: 12px ariel;
-		padding: 2px;
-		margin: 2px;
-		background-color: green;
-		color: black;
-	}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Playing with Bootstrap and D3">
+    <meta name="author" content="Piam Kiarostami">
+    <!--
+	<link rel="shortcut icon" href="docs-assets/ico/favicon.png">
+	-->
 		
-  .chart div {
-    font: 10px sans-serif;
-    background-color: steelblue;
-    text-align: right;
-    padding: 3px;
-    margin: 1px;
-    color: white;
-  }
+    <title>Piam &lt;3 Bootstrap + D3</title>
 
-</style>
-<body>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <h1>Simple D3 test</h1>
-  <p>This is based on code and data by <a href="http://bost.ocks.org/mike/bar/">Mike Bostock</a>.</p>
-  
-  <script>
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
 
-    <!-- plain javascript -->
-    var div = document.createElement("div");
-    div.innerHTML = "Hello world!";
-    document.body.appendChild(div);
+    <!-- Custom styles for this template -->
+    <link href="template.css" rel="stylesheet">
 
-	var div2 = 
-    <!-- using d3 selectors -->
+  </head>
 
-    d3.select("body")
-      .style("background-color", "#eee")
-      .append("div")
-      .html("Hello world!");
+  <body>
+	  
+	<!-- d3 js -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+    
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">&lt;3 Bootstrap + D3</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Basics</a></li>
+            <li><a href="#maps">Maps</a></li>
+            <li><a href="#crazy">Crazy</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-  </script>
+    <div class="container">
 
-  <p>hard coded chart:</p>
-  <div class="chart">
-    <div style="width: 40px;">4</div>
-    <div style="width: 80px;">8</div>
-    <div style="width: 150px;">15</div>
-    <div style="width: 160px;">16</div>
-    <div style="width: 230px;">23</div>
-    <div style="width: 420px;">42</div>
-  </div>
+      <div class="starter-template">
+        <h1>A simple Bootstrap page showing off D3</h1>
+        <p class="lead">This is based on code and data by <a href="http://bost.ocks.org/mike/bar/">Mike Bostock</a>.</p>
+      </div>
+	  
+	  
+	  <div class="main-body">
+		  
+		<p>Simple Chart:</p>
+		<div id="d3chart" class="chart"></div>
+	    
+		<script>
+	      var data = [ 1,2,3,4,5,6,7,8,42,3,5,6];
 
-  <p>d3 chart:</p>
-  <div id="d3chart" class="chart">
-  </div>
-
-  <script>
-    var data = [ 1,2,3,4,5,6,7,8,42,3,5,6];
-
-    var x = d3.scale.linear()
-      .domain([0, d3.max(data)])
-      .range([0, 500]);
+	      var x = d3.scale.linear()
+	        .domain([0, d3.max(data)])
+	        .range([0, 500]);
 
 
-    d3.select("#d3chart")
-      .selectAll("div")
-        .data(data)
-      .enter().append("div")
-        .style("width", function(d) { return x(d) + "px"; })
-        .text(function(d) { return d; });
+	      d3.select("#d3chart")
+	        .selectAll("div")
+	          .data(data)
+	        .enter().append("div")
+	          .style("width", function(d) { return x(d) + "px"; })
+	          .text(function(d) { return d; });
 
-  </script>
+	    </script>		  
+	  </div>
 
-</body>
+    </div><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
