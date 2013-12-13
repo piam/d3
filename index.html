@@ -90,11 +90,16 @@
 	      </p>
 	  </div>
 	  
-	  <script>
-	  
+	  <script type="text/javascript">
+	    function rndm_clr() { return "hsl(" + Math.random() * 360 + ",100%,50%)"; }  
 	  	d3.select("#d3selectors")
 		  .selectAll(".btn")
-		  	.style("background-color", rndm_clr=(function() {return "hsl(" + Math.random() * 360 + ",100%,50%)";}));
+		    .each(function(d,i)
+				{
+					var tmp_rndm = rndm_clr(); 
+					this.style.backgroundColor=tmp_rndm;
+					this.style.borderColor=tmp_rndm;
+				})			
 	  </script>
 
     </div><!-- /.container -->
