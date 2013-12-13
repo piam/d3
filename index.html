@@ -11,7 +11,7 @@
 	<link rel="shortcut icon" href="docs-assets/ico/favicon.png">
 	-->
 		
-    <title>Piam &lt;3 Bootstrap + D3</title>
+    <title>&lt;3 D3</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.css" rel="stylesheet">
@@ -35,7 +35,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">&lt;3 D3</a>
+          <a class="navbar-brand" href="#">&lt;3 Bootstrap + D3</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -77,6 +77,24 @@
 
 	    </script>		  
 	  </div>
+	  
+	  <p>D3 selectors in action:</p>
+	  <div id="d3selectors">
+	      <p>
+	        <button type="button" class="btn btn-lg btn-default">Randomly</button>
+	        <button type="button" class="btn btn-lg btn-primary">Set</button>
+	        <button type="button" class="btn btn-lg btn-success">Button</button>
+	        <button type="button" class="btn btn-lg btn-info">Color</button>
+	        <button type="button" class="btn btn-lg btn-warning">Using</button>
+	        <button type="button" class="btn btn-lg btn-danger">Selectors</button>
+	      </p>
+	  </div>
+	  
+	  <script>
+	  	d3.select("#d3selectors")
+		  .selectAll(".btn").style("background-color", var btn_clr = function() {return "hsl(" + Math.random() * 360 + ",100%,50%)";});
+		  .selectAll(".btn").style("border-color"), btn_clr
+	  </script>
 
     </div><!-- /.container -->
 
