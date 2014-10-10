@@ -112,7 +112,23 @@ mixpanel.init("31e20772858d1954ef9dcb79f18ffd70");
 	  </script>
 	  
 	  <!-- Simple button for MixPanel tracking test -->
-	  <input id="clickMe" type="button" value="clickme" onclick="mixpanel.identify('12148'); mixpanel.track('event');" />
+	  <input id="Identify" type="button" value="clickme" onclick="mixpanel.identify('12148'); mixpanel.track('event');" />
+
+	  <input id="track" type="button" value="clickme" onclick="mixpanel.track('event');" />
+
+	  <input id="setProperties" type="button" value="clickme" onclick=' 
+
+	  mixpanel.people.set({
+    "$email": "jsmith@example.com",    // only special properties need the $
+    
+    "$created": "2011-03-16 16:53:54",
+    "$last_login": new Date(),         // properties can be dates...
+    
+    "credits": 150,                    // ...or numbers
+    
+    "gender": "Male"                    // feel free to define your own properties
+	}); ' 
+	  />
 
 
 	  <!-- Enter/Exit example -->
